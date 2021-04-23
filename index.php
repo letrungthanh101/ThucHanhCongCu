@@ -103,19 +103,9 @@ $products = $db->getRows('products');
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
-
-
-
-
-
         <div class="container">
-
             <h4>Sản phẩm nổi bật</h4>
             <div class="row ">
-
-
-
                 <?php
                 if (!empty($products)) {
                     foreach ($products as $row) {
@@ -127,17 +117,11 @@ $products = $db->getRows('products');
                                     <h4 class="card-title "><?php echo $row['name']; ?></h4>
                                     <h5 class=" text-danger bold"> <?php echo $row['price']; ?> $</h5>
                                     <p style=" text-decoration: line-through; ">300$</p>
-                                    <p class="card-text">This is a wider card with supporting text below as </p>
-
-                                 
-                               
-                                <a class="btn btn-danger" href="checkout.php?id=<?php echo $row['id']; ?>">BUY NOW</a>
-                                
-
+                                    <p class="card-text">This is a wider card with supporting text below as </p>                           
+                                    <a class="btn btn-danger" href="checkout.php?id=<?php echo $row['id']; ?>">BUY NOW</a>
                                     <p class="card-text "><small class="text-muted">Last updated 1 mins ago</small></p>
                                 </div>
                             </div>
-
                         </div>
                 <?php
                     }
