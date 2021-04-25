@@ -33,7 +33,7 @@ if (empty($productData)) {
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Chi tiết sản phẩm</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

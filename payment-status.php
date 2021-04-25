@@ -27,7 +27,7 @@ if (!empty($_GET['id'])) {
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Thanh toán</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,28 +38,30 @@ if (!empty($_GET['id'])) {
 
 <body>
 
-<div class="container">
-<div class="status">
-        <?php if (!empty($paymentData)) { ?>
-            <h1 class="success text-success text-center">Your Payment has been Successful!</h1>
-            <h4>Payment Information</h4>
-            <p ><b>TXN ID:</b> <?php echo $paymentData['txn_id']; ?></p>
-            <p><b>Paid Amount:</b> <?php echo $paymentData['payment_gross'] . ' ' . $paymentData['currency_code']; ?></p>
-            <p><b>Payment Status:</b> <?php echo $paymentData['payment_status']; ?></p>
-            <p><b>Payment Date:</b> <?php echo $paymentData['created']; ?></p>
-            <p><b>Payer Name:</b> <?php echo $paymentData['payer_name']; ?></p>
-            <p><b>Payer Email:</b> <?php echo $paymentData['payer_email']; ?></p>
+    <div class="container">
+        <div class="status">
+            <?php if (!empty($paymentData)) { ?>
+                <h1 class="success text-success text-center">Your Payment has been Successful!</h1>
+                <h4>Thông tin thanh toán</h4>
+                <p><b>TXN ID:</b> <?php echo $paymentData['txn_id']; ?></p>
+                <p><b>Tổng tiền:</b> <?php echo $paymentData['payment_gross'] . ' ' . $paymentData['currency_code']; ?></p>
+                <p><b>Trạng thái thanh toán:</b> <?php echo $paymentData['payment_status']; ?></p>
+                <p><b>Ngày thanh toán:</b> <?php echo $paymentData['created']; ?></p>
+                <p><b>Tài khoản thanh toán:</b> <?php echo $paymentData['payer_name']; ?></p>
+                <p><b>Email:</b> <?php echo $paymentData['payer_email']; ?></p>
 
-            <h4>Product Information</h4>
-            <p><b>Name:</b> <?php echo $productData['name']; ?></p>
-            <p><b>Price:</b> <?php echo $productData['price'] . ' ' . $productData['currency']; ?></p>
-        <?php } else { ?>
-            <h1 class="error">Your Payment has Failed</h1>
-        <?php } ?>
-        <a class="btn btn-danger" href="index.php" >Tiếp tục mua sắm</a>
+                <h4>Thông tin sản phẩm</h4>
+                <p><b>Tên sản phẩm:</b> <?php echo $productData['name']; ?></p>
+                <p><b>Giá:</b> <?php echo $productData['price'] . ' ' . $productData['currency']; ?></p>
+            <?php } else { ?>
+                <h1 class="error">Thanh toán thất bại</h1>
+            <?php } ?>
+            <a class="btn btn-danger" href="index.php">Tiếp tục mua sắm</a>
+        </div>
     </div>
-</div>
-   
+    <?php
+    require_once "./footer.php"
+    ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
